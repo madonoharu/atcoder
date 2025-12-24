@@ -1,0 +1,37 @@
+[env]
+CURRENT_CONTEST = ""
+
+[tools]
+rust = "1.89.0"
+
+[tasks.clip]
+description = "Copy to clipboard"
+run = "zsh ./clip.sh"
+
+[tasks.new]
+description = "Retrieve test cases and create a package"
+usage = '''
+arg "<contest>" help="Contest ID. Required for some platforms"
+'''
+run = '''
+if [[ ! -d "$MISE_CONFIG_ROOT/contests/{{ usage.contest }}" ]]; then
+  cargo compete new {{ usage.contest }}
+fi
+
+mise config set env.CURRENT_CONTEST {{ usage.contest }}
+'''
+
+[tasks.test]
+description = "Test your code"
+usage = '''
+arg "<bin_name_or_alias>"
+'''
+run = '''
+cd "contests/$CURRENT_CONTEST"
+cargo compete test {{ usage.bin_name_or_alias }}
+'''
+
+[shell_alias]
+t = "mise r test"
+c = "mise r clip"
+n = "mise r new"

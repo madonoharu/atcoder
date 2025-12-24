@@ -1,0 +1,105 @@
+test-suite = "{{ manifest_dir }}/testcases/{{ bin_alias }}.yml"
+
+[template]
+src = '''
+#![allow(unused_imports)]
+use helpers::prelude::*;
+
+#[argio::argio(input = proconio::input)]
+#[proconio::fastout]
+fn main() {
+    todo!();
+}
+'''
+
+[template.new]
+edition = "2024"
+dependencies = '''
+helpers.workspace = true
+
+ac-library-rs.workspace = true
+alga.workspace = true
+amplify.workspace = true
+amplify_derive.workspace = true
+amplify_num.workspace = true
+argio.workspace = true
+ascii.workspace = true
+az.workspace = true
+bitset-fixed.workspace = true
+bitvec.workspace = true
+bstr.workspace = true
+btreemultimap.workspace = true
+counter.workspace = true
+easy-ext.workspace = true
+either.workspace = true
+fixedbitset.workspace = true
+getrandom.workspace = true
+glidesort.workspace = true
+hashbag.workspace = true
+im-rc.workspace = true
+indexing.workspace = true
+indexmap.workspace = true
+itertools.workspace = true
+itertools-num.workspace = true
+lazy_static.workspace = true
+libm.workspace = true
+maplit.workspace = true
+memoise.workspace = true
+multimap.workspace = true
+multiversion.workspace = true
+nalgebra.workspace = true
+ndarray.workspace = true
+num.workspace = true
+num-bigint.workspace = true
+num-complex.workspace = true
+num-derive.workspace = true
+num-integer.workspace = true
+num-iter.workspace = true
+num-rational.workspace = true
+num-traits.workspace = true
+omniswap.workspace = true
+once_cell.workspace = true
+ordered-float.workspace = true
+pathfinding.workspace = true
+permutohedron.workspace = true
+petgraph.workspace = true
+primal.workspace = true
+proconio.workspace = true
+rand.workspace = true
+rand_chacha.workspace = true
+rand_core.workspace = true
+rand_distr.workspace = true
+rand_hc.workspace = true
+rand_pcg.workspace = true
+rand_xorshift.workspace = true
+rand_xoshiro.workspace = true
+recur-fn.workspace = true
+regex.workspace = true
+rpds.workspace = true
+rustc-hash.workspace = true
+smallvec.workspace = true
+static_assertions.workspace = true
+statrs.workspace = true
+superslice.workspace = true
+tap.workspace = true
+text_io.workspace = true
+thiserror.workspace = true
+varisat.workspace = true
+'''
+
+[template.new.copy-files]
+"./template-cargo-lock.toml" = "Cargo.lock"
+
+[new]
+kind = "cargo-compete"
+platform = "atcoder"
+path = "contests/{{ contest }}"
+
+[test]
+toolchain = "1.89.0"
+
+[submit]
+# atcoderの規制によりsubmitは遮断されます
+kind = "command"
+args = ["zsh", "clip.sh", "{{ bin_name }}"]
+language_id = "6088"
