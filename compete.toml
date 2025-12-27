@@ -5,8 +5,7 @@ src = '''
 #![allow(unused_imports)]
 use helpers::prelude::*;
 
-#[argio::argio(input = proconio::input)]
-#[proconio::fastout]
+#[helpers::main]
 fn main() {
     todo!();
 }
@@ -15,8 +14,6 @@ fn main() {
 [template.new]
 edition = "2024"
 dependencies = '''
-helpers.workspace = true
-
 ac-library-rs.workspace = true
 alga.workspace = true
 amplify.workspace = true
@@ -85,10 +82,10 @@ tap.workspace = true
 text_io.workspace = true
 thiserror.workspace = true
 varisat.workspace = true
-'''
 
-[template.new.copy-files]
-"./template-cargo-lock.toml" = "Cargo.lock"
+[helpers]
+workspace = true
+'''
 
 [new]
 kind = "cargo-compete"

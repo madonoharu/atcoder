@@ -1,7 +1,8 @@
 [env]
-CURRENT_CONTEST = ""
+CURRENT_CONTEST = "practice"
 
 [tools]
+"cargo:https://github.com/madonoharu/cargo-compete" = "latest"
 rust = "1.89.0"
 
 [tasks.clip]
@@ -27,7 +28,7 @@ usage = '''
 arg "<bin_name_or_alias>"
 '''
 run = '''
-cd "contests/$CURRENT_CONTEST"
+cd "$MISE_CONFIG_ROOT/contests/$CURRENT_CONTEST"
 cargo compete test {{ usage.bin_name_or_alias }}
 '''
 

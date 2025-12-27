@@ -72,3 +72,6 @@ tap.workspace = true
 text_io.workspace = true
 thiserror.workspace = true
 varisat.workspace = true
+
+[dependencies.internals]
+path = "../internals"

@@ -16,8 +16,6 @@ name = "practice-b"
 path = "src/bin/b.rs"
 
 [dependencies]
-helpers.workspace = true
-
 ac-library-rs.workspace = true
 alga.workspace = true
 amplify.workspace = true
@@ -86,5 +84,8 @@ tap.workspace = true
 text_io.workspace = true
 thiserror.workspace = true
 varisat.workspace = true
+
+[dependencies.helpers]
+workspace = true
 
 [dev-dependencies]

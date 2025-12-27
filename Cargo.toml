@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["contests/*", "helpers"]
+members = ["contests/*", "helpers", "internals"]
 
 [workspace.package]
 version = "0.1.0"
@@ -31,7 +31,6 @@ fixedbitset = "=0.5.7"
 getrandom = "=0.3.3"
 glidesort = "=0.1.2"
 hashbag = "=0.1.12"
-helpers = { path = "./helpers" }
 im-rc = "=15.1.0"
 indexing = { version = "=0.4.1", features = ["experimental_pointer_ranges"] }
 indexmap = "=2.11.0"
@@ -91,3 +90,6 @@ template = { path = "template", version = "=0.1.0" }
 text_io = "=0.1.13"
 thiserror = "=2.0.16"
 varisat = "=0.2.2"
+
+[workspace.dependencies.helpers]
+path = "./helpers"

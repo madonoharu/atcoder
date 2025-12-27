@@ -1,8 +1,7 @@
 #![allow(unused_imports)]
 use helpers::prelude::*;
 
-#[argio::argio(input = proconio::input)]
-#[proconio::fastout]
+#[helpers::main]
 fn main() {
     todo!();
 }

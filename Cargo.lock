@@ -462,6 +462,7 @@ dependencies = [
  "im-rc",
  "indexing",
  "indexmap",
+ "internals",
  "itertools",
  "itertools-num",
  "lazy_static",
@@ -547,6 +548,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "276ec31bcb4a9ee45f58bec6f9ec700ae4cf4f4f8f2fa7e06cb406bd5ffdd770"
 dependencies = [
  "num-traits",
+]
+
+[[package]]
+name = "internals"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.111",
 ]
 
 [[package]]

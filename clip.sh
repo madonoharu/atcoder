@@ -17,11 +17,13 @@ if [[ ! -s $src_path ]]; then
 fi
 
 src=$(cat $src_path)
-lib=$(cat 'helpers/src/lib.rs')
-src+="
-mod helpers {
-$lib
-}
-"
+from="#[helpers::main]"
+to="#[argio::argio(input = proconio::input)]\n#[proconio::fastout]"
+src=${src/$from/$to}
 
-echo $src | rustfmt | pbcopy
+lib=$(cat 'helpers/src/lib.rs')
+lib=${lib##'pub use internals::*;'}
+lib=${lib#"${lib%%[!"$IFS"]*}"}
+lib="mod helpers {$lib}"
+
+printf "$src\n\n$lib" | rustfmt | pbcopy
