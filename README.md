@@ -5,6 +5,10 @@ cargo install --git https://github.com/madonoharu/cargo-compete
 brew install mise
 ```
 
+## ログイン
+
+https://zenn.dev/warabi271/articles/b2661b3d206e21
+
 ## コンテストに参加
 
 ```sh
