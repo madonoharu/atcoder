@@ -7,7 +7,6 @@ version = "0.1.0"
 edition = "2024"
 
 [workspace.dependencies]
-# 202301から:
 ac-library-rs = "=0.2.0"
 alga = "=0.9.3"
 amplify = { version = "=4.9.0", features = [
@@ -44,7 +43,6 @@ multimap = "=0.10.1"
 multiversion = "=0.8.0"
 nalgebra = "=0.34.0"
 ndarray = "=0.16.1"
-# 202004から続投:
 num = "=0.4.3"
 num-bigint = "=0.4.6"
 num-complex = "=0.4.6"
@@ -71,7 +69,6 @@ rand_xorshift = "=0.4.0"
 rand_xoshiro = "=0.7.0"
 recur-fn = "=2.2.0"
 regex = "=1.11.2"
-# 202411から:
 rpds = "=1.1.1"
 rustc-hash = "=2.1.1"
 smallvec = { version = "=1.15.1", features = [
@@ -86,7 +83,6 @@ static_assertions = "=1.1.0"
 statrs = "=0.18.0"
 superslice = "=1.0.0"
 tap = "=1.0.1"
-template = { path = "template", version = "=0.1.0" }
 text_io = "=0.1.13"
 thiserror = "=2.0.16"
 varisat = "=0.2.2"

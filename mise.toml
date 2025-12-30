@@ -1,8 +1,9 @@
 [env]
-CURRENT_CONTEST = "practice"
+CURRENT_CONTEST = "dp"
 
 [tools]
 "cargo:https://github.com/madonoharu/cargo-compete" = "latest"
+"cargo:https://github.com/madonoharu/cargo-equip" = "latest"
 rust = "1.89.0"
 
 [tasks.clip]
